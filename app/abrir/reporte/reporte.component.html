@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="form-container">
+      <h2 style="text-align: center;">REPORTAR</h2>
+  
+      <form>
+        <h2 style="text-align: center;">Seleccione el problema ocurrido:</h2>
+  
+        <div class="checkbox-container">
+          <div *ngFor="let error of errores">
+            <input type="checkbox" [(ngModel)]="error.seleccionado" [name]="error.nombre">
+            <label>{{error.nombre}}</label> <br>
+            <ng-container *ngIf="error.nombre === 'Otro' && error.seleccionado">
+                <input type="text" [(ngModel)]="error.detalle" name="detalle">
+              </ng-container>
+          </div>
+        </div>
+  
+        <button type="submit" (click)="reportar()" style="margin-top: 20px;">Reportar</button>
+      </form>
+  
+   
+    </div>
+  </div>

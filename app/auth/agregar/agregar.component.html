@@ -1,0 +1,39 @@
+
+  <h2>Registro de Usuario</h2>
+  
+  <form  method="post"> 
+  <label >Nombre:</label><br>
+  <input type="text" [(ngModel)]="datosU.nombre" name="nombre" required="required"><br><br>
+
+  <label>Apellido paterno:</label><br>
+  <input type="text" [(ngModel)]="datosU.apellido_p"  name="apellidoPaterno" placeholder="apellidoPaterno" required="required"><br><br>
+
+  <label >Apellido materno:</label><br>
+  <input type="text" [(ngModel)]="datosU.apellido_m" name="apellidoMaterno"  placeholder="apellidoMaterno" required="required"><br><br>
+
+  <label >Correo electrónico:</label><br>
+  <input type="email" [(ngModel)]="datosU.correo"  name="email" placeholder="Email" required="required"><br><br>
+
+  <label >Contraseña:</label><br>
+  <input type="password" [(ngModel)]="datosU.contrasena" name="contrasena" required="required"><br><br>
+<!--
+  <label for="confirmarContraseña">Confirmar contraseña:</label><br>
+  <input type="password" id="confirmarContraseña" name="confirmarContraseña" required="required"><br><br>
+-->
+  <button type="submit" class="btn" (click)="agregar()" >Registrar</button> <br><br>
+  
+  <table border="1" *ngIf="hayRegistros(); else sinarticulos">
+    <tr>
+      <td>nombre</td><td>Apellido_m</td><td>apellido_m</td>
+    </tr>
+    <tr *ngFor="let datosU of usuario">
+      <td>{{datosU.nombre}}</td>
+      <td>{{datosU.apellido_p}}</td>
+      <td>{{datosU.apellido_m}}</td>       
+    </tr>
+  </table>
+  <ng-template #sinarticulos><p>No hay articulos.</p></ng-template>
+  <br>
+  <input type="button" value="Regresar" onclick="window.history.back()">
+</form>
+
