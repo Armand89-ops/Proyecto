@@ -1,0 +1,108 @@
+<style>
+  .custom-table {
+    width: 80%; /* Ancho personalizado de la tabla */
+    height: 200px; /* Altura personalizada de la tabla */
+    align-items: center;
+  }
+  .custom-button {
+    background-color: #025464;
+    color: white; /* Color del texto */
+    border-color: #025464; /* Color del borde */
+    width: 300px;
+  }
+</style>
+
+<form  method="post"> 
+
+    <h2>Registro de administradores</h2>
+    <div class="form-group row">
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Nombre:</label>
+      <div class="col-sm-10">
+        <input type="text" name="nombre" [(ngModel)]="datosA.nombre" class="form-control form-control-lg"  placeholder="Nombre" required="required">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Apellido paterno:</label>
+      <div class="col-sm-10">
+        <input  name="apellidoPaterno"  [(ngModel)]="datosA.apellido_p" placeholder="Coloque el apellido paterno" required="required" class="form-control form-control-lg"  >
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Apellido materno:</label>
+      <div class="col-sm-10">
+        <input  type="text"  name="apellidoMaterno"  [(ngModel)]="datosA.apellido_m" placeholder="Coloque el apellido Materno" required="required"class="form-control form-control-lg"  >
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Correo electronico:</label>
+      <div class="col-sm-10">
+        <input  type="email"   name="email"  [(ngModel)]="datosA.correo" placeholder="Coloque el email" required="required" class="form-control form-control-lg"  >
+      </div>
+    </div>
+
+    
+    <div class="form-group row">
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Contraseña:</label>
+      <div class="col-sm-10">
+        <input  type="password"  name="contrasena"  [(ngModel)]="datosA.contrasena" placeholder="Coloque la contraseña" required="required" class="form-control form-control-lg"  >
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Domicilio:</label>
+      <div class="col-sm-10">
+        <input  type="text"  name="domicilio"  [(ngModel)]="datosA.domicilio" placeholder="Coloque el domicilio" required="required" class="form-control form-control-lg"  >
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Sector que administrara:</label>
+      <div class="col-sm-10">
+        <input type="text"  name="sector"  [(ngModel)]="datosA.sector" placeholder="Coloque el sector ha administrar" required="required" class="form-control form-control-lg"  >
+      </div>
+    </div>
+
+  <div class="container text-center">
+    <div class="row align-items-start">
+      <div class="col">
+        <button type="button" class="btn btn-primary btn-lg btn-block mb-3 custom-button"  onclick="window.history.back()">
+          Regresar
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-primary btn-lg btn-block mb-3 custom-button" (click)="agregar()">
+          Registrar
+        </button>
+      </div>
+    </div>
+   
+  </div>
+
+  </form>
+
+
+<table  *ngIf="hayRegistros(); " class="table table-striped table-dark custom-table mx-auto" >
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Nombre</th>
+    <th scope="col">Apellido paterno</th>
+    <th scope="col">Apellido materno</th>
+    <th scope="col">Correo</th>
+    <th scope="col">Domicilio</th>
+    <th scope="col">Sector</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let datosA of usuario">
+    <td >{{datosA.nombre}}</td>
+    <td>{{datosA.apellido_p}}</td>
+    <td>{{datosA.apellido_m}}</td>
+    <td>{{datosA.correo}}</td>
+    <td>{{datosA.domicilio}}</td>  
+    <td>{{datosA.sector}}</td>  
+  </tr>
+</tbody>
+</table>
