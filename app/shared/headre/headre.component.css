@@ -1,0 +1,38 @@
+.footer {
+    background-color: #025464;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: right;
+    left: 0; 
+    right: 0; 
+    justify-content: space-between; 
+    align-items: center;
+    display: flex;
+  }
+  footer nav {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+  }
+  footer nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  footer nav ul li {
+    margin-right: 20px;
+  }
+  footer nav ul li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento */
+  }
+  footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  footer nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+    .logo {
+      max-width: 220px; /* Cambia este valor según el tamaño de tu imagen */
+    }

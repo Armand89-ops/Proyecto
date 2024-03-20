@@ -1,0 +1,28 @@
+h1 {
+    font-family: 'Lucida Handwriting', cursive;
+    font-size: 3em;
+    color: #000000; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4); 
+    letter-spacing: 2px; 
+    text-align: center; 
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Establece el alto mínimo de la ventana gráfica del viewport (100vh significa 100% del viewport height) */
+  }
+  
+  .content {
+    flex: 1; /* Esto permite que el contenido ocupe el espacio restante vertical */
+    padding: 20px;
+  }
+  
+p{
+  text-align: center;
+}
+h2{
+  text-align: center;
+}
