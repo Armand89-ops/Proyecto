@@ -1,9 +1,0 @@
-<div class="productos-container">
-    <div *ngFor="let producto of productos" class="producto">
-      <img [src]="producto.imagen" alt="Imagen del producto">
-      <h3>{{ producto.nombre }}</h3>
-      <p>{{ producto.descripcion }}</p>
-      <p>Precio: ${{ producto.precio }}</p>
-      <button (click)="seleccionarProducto(producto)">Seleccionar</button>
-    </div>
-  </div>
